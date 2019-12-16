@@ -1,0 +1,33 @@
+{
+  "name": "netflixclone",
+  "version": "1.0.0",
+  "description": "Practice React project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungho1109/netflixclone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jungho1109/netflixclone/issues"
+  },
+  "homepage": "https://github.com/jungho1109/netflixclone#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.4",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.1",
+    "nodemon": "^2.0.2"
+  }
+}
