@@ -5,6 +5,7 @@ import FirstCard from "./FirstCard";
 import SecondCard from "./SecondCard";
 import ThirdCard from "./ThirdCard";
 import FAQCard from "./FAQCard";
+import EntryBottom from "./EntryBottom";
 
 const Entry = () => {
   
@@ -16,6 +17,7 @@ const Entry = () => {
       <SecondCard/>
       <ThirdCard/>
       <FAQCard/>
+      <EntryBottom/>
     </Fragment>
   );
 };

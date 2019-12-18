@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "./logo.png";
+import {Link} from 'react-router-dom';
 
 const HeaderBlock = styled.div`
   .header {
@@ -47,11 +48,13 @@ const Header = () => {
     <HeaderBlock>
       <div className="header">
         <div className="header__logo">
+        <Link to="/">
           <img src={logo} className="header__logo-image" alt="" />
+          </Link>
         </div>
         <div className="header__right">
-          <button className="header__right-btn">Sign Up</button>
-          <button className="header__right-btn">Sign In</button>
+          <Link to="/register"><button className="header__right-btn">Sign Up</button></Link>
+          <Link to="/login"><button className="header__right-btn">Sign In</button></Link>
         </div>
       </div>
     </HeaderBlock>

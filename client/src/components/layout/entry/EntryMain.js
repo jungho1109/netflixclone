@@ -54,6 +54,7 @@ const MainBlock = styled.div`
             border: none;
             outline: none;
             border-radius: 3px;
+            padding-left:2rem;
           }
 
           &-placeholder {
@@ -98,7 +99,7 @@ const EntryMain = () => {
             <h1 className="content__title">Unlimited movies, TV <br/>shows, and more.</h1>
             <p className="content__lead-1">Watch anywhere. Cancel anytime.</p>
             <div className="content__email">
-              <input className="content__email-input"></input>
+              <input className="content__email-input" disabled></input>
               <p className="content__email-placeholder">Email address</p>
               <button className="content__email-btn">
                 I'LL TRY IT NOW &nbsp;>
