@@ -1,8 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import logo from "../entry/logo.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Background from "../entry/Background";
+import {register} from '../../../reducers/auth';
+import {connect} from 'react-redux';
 
 const HeaderBlock = styled.div`
   .header {
@@ -87,7 +89,33 @@ background:rgba(0, 0, 0, 0.75);
   }
 `;
 
-const Register = () => {
+const Register = ({auth,register}) => {
+  const [formData,setFormData] = useState({
+    name:'',
+    email:'',
+    password:'',
+    password2:''
+  })
+
+  const {name,email,password,password2} = formData;
+
+  const onChange = e=>{
+    setFormData({...formData,[e.target.name]:e.target.value})
+  }
+
+  const onSubmit=e=>{
+    e.preventDefault();
+    if(password===password2){
+      register(formData);
+    }else{
+      console.log('Fail');
+    }
+  }
+
+  if(auth.isAuthenticated){
+    return <Redirect to="/landing"/>
+  }
+
   return (
     <Fragment>
       <Background />
@@ -103,10 +131,11 @@ const Register = () => {
       <MainBlock>
         <div className="card">
           <p className="card__title">Sign Up</p>
-          <form className="card__form">
-            <input type="text" className="card__form-text" placeholder="Username"/>
-            <input type="email" className="card__form-email" placeholder="Email address"/>
-            <input type="password" className="card__form-password" placeholder="Password"/>
+          <form className="card__form" onSubmit={onSubmit}>
+            <input type="text" className="card__form-text" placeholder="Username" name="name" onChange={onChange} value={name}/>
+            <input type="email" className="card__form-email" placeholder="Email address" name="email" onChange={onChange} value={email}/>
+            <input type="password" className="card__form-password" placeholder="Password" name="password" onChange={onChange} value={password}/>
+            <input type="password" className="card__form-password" placeholder="Confirm password" name="password2" onChange={onChange} value={password2}/>
             <button className="card__form-btn">Sign Up</button>
           </form>
           <div className="card__footer">
@@ -121,4 +150,10 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default connect(
+  state=>({
+    auth:state.auth
+  }),{
+    register
+  }
+)(Register);

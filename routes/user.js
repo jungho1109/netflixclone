@@ -86,7 +86,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const {email, password } = req.body;
 
     try {
       let user = await User.findOne({ email });
@@ -125,12 +125,12 @@ router.post(
   }
 );
 
-// @route   GET     api/auth
+// @route   GET     user/auth
 // @desc    Get current user
 // @access  Public
-router.get("/", auth, async (req, res) => {
+router.get("/auth", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.findById.id).select("-password");
+    const user = await User.findById(req.user.id).select("-password");
     res.json(user);
   } catch (err) {
     console.error(err.message);

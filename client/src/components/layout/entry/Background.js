@@ -44,7 +44,7 @@ const Background = () => {
           <img
             className="background__wrap-image"
             src="https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-            srcset="https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
+            srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/2a67d7bb-5681-490a-8515-c7e322c6255e/bf65d06b-7d74-423a-805c-77b3920d1d86/CA-en-20191209-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
             alt=""
           ></img>
         </div>

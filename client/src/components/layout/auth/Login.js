@@ -1,8 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment,useState } from "react";
 import styled from "styled-components";
 import logo from "../entry/logo.png";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 import Background from "../entry/Background";
+import {login} from '../../../reducers/auth';
+import {connect} from 'react-redux';
 
 const HeaderBlock = styled.div`
   .header {
@@ -87,7 +89,25 @@ background:rgba(0, 0, 0, 0.75);
   }
 `;
 
-const Login = () => {
+const Login = ({auth,login}) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const {email, password} = formData;
+
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    login({email,password});
+  };
+
+  if(auth.isAuthenticated){
+    return <Redirect to="/landing"/>
+  }
   return (
     <Fragment>
       <Background />
@@ -103,9 +123,9 @@ const Login = () => {
       <MainBlock>
         <div className="card">
           <p className="card__title">Sign In</p>
-          <form className="card__form">
-            <input type="email" className="card__form-email" placeholder="Email address"/>
-            <input type="password" className="card__form-password" placeholder="Password"/>
+          <form className="card__form" onSubmit={onSubmit}>
+            <input type="email" className="card__form-email" placeholder="Email address" name="email" onChange={onChange} value={email}/>
+            <input type="password" className="card__form-password" placeholder="Password" name="password" onChange={onChange} value={password}/>
             <button className="card__form-btn">Sign In</button>
           </form>
           <div className="card__footer">
@@ -120,4 +140,10 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default connect(
+  state=>({
+    auth:state.auth
+  }),{
+    login
+  }
+)(Login);

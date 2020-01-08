@@ -6,8 +6,14 @@ import SecondCard from "./SecondCard";
 import ThirdCard from "./ThirdCard";
 import FAQCard from "./FAQCard";
 import EntryBottom from "./EntryBottom";
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
-const Entry = () => {
+const Entry = ({auth}) => {
+
+  if(auth.isAuthenticated){
+    return <Redirect to="/landing"/>
+  }
   
   return (
     <Fragment>
@@ -22,4 +28,8 @@ const Entry = () => {
   );
 };
 
-export default Entry;
+export default connect(
+  state=>({
+    auth:state.auth
+  })
+)(Entry);
