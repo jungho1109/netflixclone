@@ -138,7 +138,7 @@ const Landing = ({ logout, auth,popularMovie,topMovie,popularShow,topShow,api })
       <div className="blank">
       </div>
 
-      {!api.loading&&<MainBlock>
+      {topMovie!==null&&topShow!==null&&popularMovie!==null&&popularShow!==null&&<MainBlock>
         <div className="subject">
             Popular Movies
         </div>

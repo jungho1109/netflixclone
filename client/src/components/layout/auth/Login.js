@@ -66,6 +66,7 @@ background:rgba(0, 0, 0, 0.75);
         color:#fff;
         font-weight:bold;
         font-size:1rem;
+        cursor:pointer;
       }
     }
 
