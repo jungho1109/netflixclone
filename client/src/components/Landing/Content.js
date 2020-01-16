@@ -49,13 +49,15 @@ const ContentBlock = styled.div`
 const Content = ({ content }) => {
   const [count, setCount] = useState(0);
   const contents = [];
-  for (let i = 0; i < 18; i++) {
-    contents.push(
-      <Thumbnail
-        poster={content.results[i].poster_path}
-        title={content.results[i].title}
-      />
-    );
+  if (content != null) {
+    for (let i = 0; i < 18; i++) {
+      contents.push(
+        <Thumbnail
+          poster={content.results[i].poster_path}
+          title={content.results[i].title}
+        />
+      );
+    }
   }
 
   const pageDown = () => {
