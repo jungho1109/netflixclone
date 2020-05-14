@@ -14,4 +14,4 @@ app.use(express.json({ extended: false }));
 app.use("/user", userRouter);
 app.use("/api", apiRouter);
 
-app.listen(process.env.PORT||5000, () => console.log(`Server is On`));
+app.listen(process.env.PORT || 5000, () => console.log(`Server is On`));
