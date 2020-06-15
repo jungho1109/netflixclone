@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://jungho1109:wjdgh123123@db-rjp2k.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://jungho1109:1024wjdgh@netflixclone-svp3j.mongodb.net/<dbname>?retryWrites=true&w=majority",
   "jwtToken": "mysecrettoken",
   "githubClientId": "88ebf2fcc9930296c222",
   "githubSecret": "f0c32f22e0322d5d078dfeca7725694075492451"
